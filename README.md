@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SWAPI Angular Exam
 
 Aplicacion web desarrollada con Angular para consultar personajes de Star Wars usando la API publica SWAPI.
@@ -48,3 +49,6 @@ Las capturas de pantalla estan en `docs/screenshots`:
 - `personajes.png`: listado de personajes.
 - `acceso.png`: configuracion de acceso del Guard.
 - `ruta-protegida.png`: redireccion del Guard cuando el acceso esta desactivado.
+=======
+# proyectoFinal
+>>>>>>> ac93c314859f1b6aa26898d6d1332f73d175a1a3
