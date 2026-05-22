@@ -1,0 +1,6 @@
+<section class="status panel" [class.error]="tone === 'error'" [class.success]="tone === 'success'">
+  <h2>{{ title }}</h2>
+  @if (text) {
+    <p>{{ text }}</p>
+  }
+</section>

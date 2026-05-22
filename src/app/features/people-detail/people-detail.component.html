@@ -1,0 +1,52 @@
+<section class="page">
+  <div class="container">
+    <a class="back-link" routerLink="/personajes">Volver al listado</a>
+
+    @if (loading) {
+      <app-status-message title="Cargando detalle" text="Consultando informacion del personaje." />
+    } @else if (errorMessage) {
+      <app-status-message title="Error de carga" [text]="errorMessage" tone="error" />
+    } @else if (person) {
+      <article class="detail panel">
+        <div class="detail-header">
+          <div class="avatar" aria-hidden="true">{{ person.name.charAt(0) }}</div>
+          <div>
+            <p class="eyebrow">Detalle protegido</p>
+            <h1>{{ person.name }}</h1>
+          </div>
+        </div>
+
+        <dl class="facts">
+          <div>
+            <dt>Nacimiento</dt>
+            <dd>{{ person.birth_year }}</dd>
+          </div>
+          <div>
+            <dt>Genero</dt>
+            <dd>{{ person.gender }}</dd>
+          </div>
+          <div>
+            <dt>Altura</dt>
+            <dd>{{ person.height }} cm</dd>
+          </div>
+          <div>
+            <dt>Masa</dt>
+            <dd>{{ person.mass }} kg</dd>
+          </div>
+          <div>
+            <dt>Cabello</dt>
+            <dd>{{ person.hair_color }}</dd>
+          </div>
+          <div>
+            <dt>Ojos</dt>
+            <dd>{{ person.eye_color }}</dd>
+          </div>
+          <div>
+            <dt>Piel</dt>
+            <dd>{{ person.skin_color }}</dd>
+          </div>
+        </dl>
+      </article>
+    }
+  </div>
+</section>

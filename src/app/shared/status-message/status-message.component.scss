@@ -1,0 +1,23 @@
+.status {
+  padding: 24px;
+  border-left: 5px solid var(--primary);
+}
+
+.status h2 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+}
+
+.status p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.status.error {
+  border-left-color: var(--danger);
+}
+
+.status.success {
+  border-left-color: var(--success);
+}

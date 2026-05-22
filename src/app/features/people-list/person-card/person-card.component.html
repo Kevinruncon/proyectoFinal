@@ -1,0 +1,8 @@
+<article class="person-card panel">
+  <div class="avatar" aria-hidden="true">{{ person.name.charAt(0) }}</div>
+  <div>
+    <h2>{{ person.name }}</h2>
+    <p>Registro SWAPI #{{ person.uid }}</p>
+  </div>
+  <a class="button secondary" [routerLink]="['/personajes', person.uid]">Ver detalle</a>
+</article>

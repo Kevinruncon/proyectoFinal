@@ -1,0 +1,31 @@
+<section class="page">
+  <div class="container access-layout">
+    <div>
+      <h1 class="section-title">Control de acceso</h1>
+      <p class="section-subtitle">
+        Esta pantalla demuestra el uso de un Guard. Active el permiso para entrar a
+        las paginas de detalle de personajes.
+      </p>
+    </div>
+
+    <section class="panel access-card">
+      <div>
+        <h2>Permitir detalles</h2>
+        <p>Condicion local usada por el guard de la ruta <strong>/personajes/:id</strong>.</p>
+      </div>
+
+      <label class="switch">
+        <input type="checkbox" [checked]="detailAccessAllowed()" (change)="updateAccess($event)">
+        <span></span>
+      </label>
+
+      @if (detailAccessAllowed()) {
+        <p class="state success">Acceso activo. Ya puede abrir la vista de detalle.</p>
+      } @else {
+        <p class="state blocked">Acceso bloqueado. El guard redirige aqui antes de mostrar detalles.</p>
+      }
+
+      <a class="button" routerLink="/personajes">Ir al listado</a>
+    </section>
+  </div>
+</section>

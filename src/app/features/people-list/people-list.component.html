@@ -1,0 +1,30 @@
+<section class="page">
+  <div class="container">
+    <h1 class="section-title">Personajes</h1>
+    <p class="section-subtitle">
+      Listado consumido desde SWAPI. Use el boton de detalle para probar la ruta protegida por Guard.
+    </p>
+
+    <div class="toolbar">
+      <p class="counter">Pagina {{ page }} de {{ totalPages }}</p>
+      <div class="pager">
+        <button class="button secondary" type="button" [disabled]="page === 1 || loading" (click)="previousPage()">Anterior</button>
+        <button class="button" type="button" [disabled]="page === totalPages || loading" (click)="nextPage()">Siguiente</button>
+      </div>
+    </div>
+
+    @if (loading) {
+      <app-status-message title="Cargando personajes" text="Consultando informacion actual desde SWAPI." />
+    } @else if (errorMessage) {
+      <app-status-message title="Error de carga" [text]="errorMessage" tone="error" />
+    } @else if (people.length === 0) {
+      <app-status-message title="Sin datos" text="La API no devolvio personajes para esta pagina." />
+    } @else {
+      <div class="grid">
+        @for (person of people; track person.uid) {
+          <app-person-card [person]="person" />
+        }
+      </div>
+    }
+  </div>
+</section>
